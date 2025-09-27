@@ -18,7 +18,9 @@ export class NewUserComponent {
   openAddUserModel() {
     this.closeAddUser.emit();
   }
-
+  get isValid(): boolean {
+    return this.enteredNewUser.trim().length > 0;
+  }
   addNewUser() {
     this.userService.addNewUser({
       id: new Date().getTime().toString(),
