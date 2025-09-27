@@ -1,0 +1,38 @@
+.user-buttons {
+  width: 100%;
+  position: absolute;
+  left: 2.5rem;
+  top: -0.4rem;
+  display: flex;
+  gap: 0.4rem;
+}
+.switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+.switcher button {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  background-color: rgb(82, 64, 165);
+  border: none;
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+}
+.switcher button:hover {
+  background-color: rgb(82, 64, 165);
+  color: #4a0774;
+  background-color: #b2aabd;
+}
+@media (max-width: 381px) {
+  .switcher {
+    flex-direction: column;
+    width: 100%;
+  }
+  .switcher button {
+    width: 100%;
+  }
+}

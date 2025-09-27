@@ -1,0 +1,11 @@
+<app-card *ngIf="user as u">
+  <div>
+    <button (click)="onSelectUser()" [class.active]="selected">
+      <span class="avatar">{{ u.name[0] }}</span>
+      <span>{{ u.name }}</span>
+    </button>
+    <span class="delete" (click)="onDeleteUser(u.id)">
+      <i class="fas fa-trash"></i>
+    </span>
+  </div>
+</app-card>

@@ -1,0 +1,26 @@
+<section id="tasks">
+  @if (isaddTask) {
+    <app-new-task
+      (onclose)="onClickCloseMenu()"
+      [userId]="userId"
+    ></app-new-task>
+  }
+  <header>
+    <h1>{{ name }}</h1>
+
+    <menu>
+      <button (click)="onClickAddTask()">Add Task</button>
+    </menu>
+  </header>
+  @if (selectedUserTask.length !== 0) {
+    <ul>
+      @for (task of selectedUserTask; track task.id) {
+        <li>
+          <app-task [taskData]="task"></app-task>
+        </li>
+      }
+    </ul>
+  } @else {
+    <h3>No tasks for the selected user!</h3>
+  }
+</section>

@@ -1,0 +1,54 @@
+<div class="calculator">
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      <p>
+        <label for="initial">Initial Investment</label>
+        <input
+          type="number"
+          id="initial"
+          name="initial"
+          min="0"
+          [(ngModel)]="enteredInitial"
+        />
+      </p>
+
+      <p>
+        <label for="annual">Annual Investment</label>
+        <input
+          type="number"
+          id="annual"
+          name="annual"
+          min="0"
+          [(ngModel)]="enteredAnnual"
+        />
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <label for="return">Expected Return (%)</label>
+        <input
+          type="number"
+          id="return"
+          name="return"
+          step="0.1"
+          [(ngModel)]="enteredExpected"
+        />
+      </p>
+
+      <p>
+        <label for="duration">Duration (years)</label>
+        <input
+          type="number"
+          id="duration"
+          name="duration"
+          min="1"
+          [(ngModel)]="enteredDuration"
+        />
+      </p>
+    </div>
+
+    <p class="actions">
+      <button type="submit">Calculate</button>
+    </p>
+  </form>
+</div>

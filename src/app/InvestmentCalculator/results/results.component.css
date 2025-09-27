@@ -1,0 +1,94 @@
+.center {
+  margin: 2rem auto;
+  text-align: center;
+}
+/* make table scroll horizontally on small screens */
+.table-wrapper {
+  width: 95%;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+}
+
+/* keep your desktop layout; allow shrink with wrapper */
+table {
+  width: 100%;
+  min-width: 600px; /* keeps columns readable; wrapper handles overflow */
+}
+
+/* optional: nicer small-screen behavior */
+@media (max-width: 640px) {
+  .center {
+    margin: 1rem auto;
+  }
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+/* Table wrapper */
+table {
+  border-collapse: collapse;
+  margin: 1rem auto;
+  font-size: 0.95rem;
+  background-color: #1e1e2f; /* dark table background */
+  border-radius: 12px;
+  overflow: scroll;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  color: #f1f1f1; /* light text */
+  max-width: 600px;
+}
+
+/* Header row */
+thead {
+  background: linear-gradient(90deg, #5e35b1, #8e24aa); /* purple gradient */
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Header cells */
+th {
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #2a2a40;
+}
+
+/* Body rows */
+td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #2a2a40;
+}
+
+/* Zebra striping */
+tbody tr:nth-child(even) {
+  background: #24243a;
+}
+
+tbody tr:nth-child(odd) {
+  background: #1e1e2f;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background: #2e2e4d;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Align currency numbers right */
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: #3be387; /* match your green accent */
+}
+
+/* Year column */
+td:first-child {
+  font-weight: bold;
+  color: #90caf9; /* light blue highlight */
+}

@@ -1,0 +1,44 @@
+<app-header></app-header>
+<main>
+  @if (isDeleteModelOpen) {
+    <app-deleted-tasks
+      (closeDeleteMenu)="closeDeletedTasks()"
+    ></app-deleted-tasks>
+  }
+
+  @if (isAddUserOpen) {
+    <app-new-user (closeAddUser)="closeAddUser()"></app-new-user>
+  }
+
+  <div class="user_task_list">
+    <div>
+      <div class="user-buttons">
+        <button class="add_members" (click)="openAddUser()">
+          <i class="fas fa-user-plus"></i>
+        </button>
+        <button class="add_members" (click)="openDeletedTasks()">
+          <i class="fas fa-check-double"></i>
+        </button>
+      </div>
+      <ul class="users">
+        <li *ngFor="let u of users" class="user_item">
+          <app-user
+            [id]="u.id"
+            (select)="onSelectUser($event)"
+            (delete)="onDeleteUser($event)"
+            [selected]="u.id === selectedUserid"
+          >
+          </app-user>
+        </li>
+      </ul>
+    </div>
+    <div>
+      @if (selectedUser) {
+        <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name">
+        </app-tasks>
+      } @else {
+        <h1>Please Select a user!</h1>
+      }
+    </div>
+  </div>
+</main>

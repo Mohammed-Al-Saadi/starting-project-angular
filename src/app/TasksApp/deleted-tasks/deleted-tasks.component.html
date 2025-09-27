@@ -1,0 +1,22 @@
+<div class="backdrop"></div>
+
+<dialog open>
+  <h2>Completed Tasks</h2>
+
+  <ul *ngIf="deletedTasks.length > 0; else noTasks">
+    <li *ngFor="let task of deletedTasks">
+      <h3>{{ task.title }}</h3>
+      <h4>By: {{ getUserName(task.userId) }}</h4>
+      <p>{{ task.summary }}</p>
+      <span>Due: {{ task.dueDate }}</span>
+    </li>
+  </ul>
+
+  <ng-template #noTasks>
+    <p>No deleted tasks.</p>
+  </ng-template>
+
+  <p class="actions">
+    <button type="button" (click)="onCloseDeleteModel()">Close</button>
+  </p>
+</dialog>

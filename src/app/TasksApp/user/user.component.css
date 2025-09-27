@@ -1,0 +1,69 @@
+div {
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #433352;
+  color: #c3b3d1;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  min-width: 13rem;
+  text-align: left;
+}
+
+button:hover,
+button:active,
+.active {
+  background-color: #9965dd;
+  color: #150722;
+}
+
+img {
+  width: 2rem;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.delete {
+  background-color: #261d2e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  width: 30px;
+}
+.delete:hover {
+  background-color: #7515156f;
+}
+.avatar {
+  display: inline-flex;
+  width: 25px;
+  height: 25px;
+  padding: 0.3rem;
+  border-radius: 50%;
+  background-color: #261d2eb8; /* pick any color or randomize */
+  color: #bcbcbc;
+  font-weight: bold;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem 0rem;
+}
+
+
