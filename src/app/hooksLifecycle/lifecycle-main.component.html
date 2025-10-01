@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="info-box">
+  <p>
+    This app demonstrates how Angular component lifecycle hooks work. Use the
+    buttons below to show or hide the <strong>LifecycleComponent</strong>, and
+    to change its input text. The logs below will explain which lifecycle hook
+    was triggered and what it does.
+  </p>
+</div>
+
+<div id="buttons">
+  <button (click)="onToggleLifecycleComponentVisibility()">
+    Toggle Lifecycle Component Visibility
+  </button>
+  <button (click)="onChangeLifecycleInputText()">
+    Change Lifecycle Component Text
+  </button>
+</div>
+
+@if (lifecycleComponentIsVisible) {
+  <app-lifecycle
+    [text]="lifecycleInputText"
+    (logEvent)="onLogReceived($event)"
+  />
+}
+
+<h3>Lifecycle Logs:</h3>
+<ul>
+  <li *ngFor="let log of lifecycleLogs">{{ log }}</li>
+</ul>
