@@ -96,3 +96,6 @@ ul li:last-child {
 #buttons button:hover {
   background-color: #217dbb;
 }
+p {
+  padding: 0rem 0.5rem;
+}
