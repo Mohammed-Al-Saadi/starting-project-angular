@@ -17,3 +17,9 @@ h2 {
   display: inline-blockz;
   border-radius: 0 0 4px 4px;
 }
+
+@media (max-width: 768px) {
+  :host {
+    width: 80%;
+  }
+}

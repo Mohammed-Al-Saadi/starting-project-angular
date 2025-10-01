@@ -36,3 +36,13 @@
     width: 100%;
   }
 }
+
+@media (max-width: 581px) {
+  .switcher {
+    flex-direction: column;
+    width: 100%;
+  }
+  .switcher button {
+    width: 100%;
+  }
+}

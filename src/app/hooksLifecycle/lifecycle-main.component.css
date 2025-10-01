@@ -18,7 +18,8 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 button {
@@ -29,6 +30,7 @@ button {
   color: #212022;
   cursor: pointer;
   border-radius: 4px;
+  min-width: 19rem;
 }
 
 button:hover {
