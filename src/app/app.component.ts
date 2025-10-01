@@ -4,6 +4,7 @@ import { CalculatorComponent } from './InvestmentCalculator/calculator-main.comp
 import { LifecycleMAinComponent } from './hooksLifecycle/lifecycle-main.component';
 import { DummyComponent } from './dummy/dummy.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
