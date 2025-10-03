@@ -1,0 +1,19 @@
+<h2>Custom two way binding</h2>
+
+<p class="description">
+  Enter width and height values to resize the rectangle. To reset, simply click
+  on the rectangle.
+</p>
+
+<div id="inputs">
+  <p>
+    <label>Width</label>
+    <input type="number" step="1.0" [(ngModel)]="rectSize.width" />
+  </p>
+  <p>
+    <label>Height</label>
+    <input type="number" step="1.0" [(ngModel)]="rectSize.height" />
+  </p>
+</div>
+
+<app-rect class="test" [(size)]="rectSize"></app-rect>

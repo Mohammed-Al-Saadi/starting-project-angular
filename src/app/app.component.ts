@@ -3,6 +3,7 @@ import { MainTasksComponent } from './TasksApp/main-tasks.component';
 import { CalculatorComponent } from './InvestmentCalculator/calculator-main.component';
 import { LifecycleMAinComponent } from './hooksLifecycle/lifecycle-main.component';
 import { DummyComponent } from './dummy/dummy.component';
+import { RectMainComponent } from './rectApp/rect-main.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { DummyComponent } from './dummy/dummy.component';
     CalculatorComponent,
     LifecycleMAinComponent,
     DummyComponent,
+    RectMainComponent,
   ],
   template: `
     <div class="switcher">
@@ -20,7 +22,7 @@ import { DummyComponent } from './dummy/dummy.component';
         Investment Calculator App
       </button>
       <button (click)="activeApp = 'dummy'">Dummy Demo App</button>
-
+      <button (click)="activeApp = 'rect'">Custom 2Way binding</button>
       <button (click)="activeApp = 'lifecycle'">Lifecycle Demo App</button>
     </div>
 
@@ -32,11 +34,13 @@ import { DummyComponent } from './dummy/dummy.component';
       <app-lifecycle-main></app-lifecycle-main>
     } @else if (activeApp === 'dummy') {
       <app-dummy></app-dummy>
+    } @else if (activeApp === 'rect') {
+      <app-rect-main></app-rect-main>
     }
   `,
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   // useing a string to track which app to show
-  activeApp: 'tasks' | 'calculator' | 'lifecycle' | 'dummy' = 'tasks';
+  activeApp: 'tasks' | 'calculator' | 'lifecycle' | 'dummy' | 'rect' = 'tasks';
 }
