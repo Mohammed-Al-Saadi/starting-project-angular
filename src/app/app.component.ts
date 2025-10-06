@@ -4,6 +4,8 @@ import { CalculatorComponent } from './InvestmentCalculator/calculator-main.comp
 import { LifecycleMAinComponent } from './hooksLifecycle/lifecycle-main.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { RectMainComponent } from './rectApp/rect-main.component';
+import { CustomComponent } from './custom-directives/custom.component';
+import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,8 @@ import { RectMainComponent } from './rectApp/rect-main.component';
     LifecycleMAinComponent,
     DummyComponent,
     RectMainComponent,
+    CustomComponent,
+    CustomPipeComponent,
   ],
   template: `
     <div class="switcher">
@@ -23,6 +27,11 @@ import { RectMainComponent } from './rectApp/rect-main.component';
       </button>
       <button (click)="activeApp = 'dummy'">Dummy Demo App</button>
       <button (click)="activeApp = 'rect'">Custom 2Way binding</button>
+      <button (click)="activeApp = 'customDirective'">
+        Custome directives
+      </button>
+      <!-- <button (click)="activeApp = 'customPipe'">Custom Pipe</button> -->
+
       <button (click)="activeApp = 'lifecycle'">Lifecycle Demo App</button>
     </div>
 
@@ -36,11 +45,23 @@ import { RectMainComponent } from './rectApp/rect-main.component';
       <app-dummy></app-dummy>
     } @else if (activeApp === 'rect') {
       <app-rect-main></app-rect-main>
+    } @else if (activeApp === 'customDirective') {
+      <app-custom-directive></app-custom-directive>
     }
+    <!-- @else if (activeApp === 'customPipe') {
+      <app-custom-pipe></app-custom-pipe>
+    } -->
   `,
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   // useing a string to track which app to show
-  activeApp: 'tasks' | 'calculator' | 'lifecycle' | 'dummy' | 'rect' = 'tasks';
+  activeApp:
+    | 'tasks'
+    | 'calculator'
+    | 'lifecycle'
+    | 'dummy'
+    | 'rect'
+    | 'customPipe'
+    | 'customDirective' = 'tasks';
 }

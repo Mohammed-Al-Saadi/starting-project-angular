@@ -1,0 +1,18 @@
+<main>
+  <article class="temperatures">
+    <header>
+      <div>
+        <h2>Current Temperatures</h2>
+        <p>{{ currentDate | date: "medium" }}</p>
+      </div>
+    </header>
+    <p>
+      New York: {{ currentTemperaturs.newYork | temperature: "cel" : "fah" }}
+    </p>
+    <p>Berlin: {{ currentTemperaturs.berlin | temperature: "fah" : "cel" }}</p>
+    <p>Paris: {{ currentTemperaturs.paris | temperature: "fah" : "cel" }}</p>
+    <p>
+      Chicago: {{ currentTemperaturs.chicago | temperature: "cel" : "fah" }}
+    </p>
+  </article>
+</main>
