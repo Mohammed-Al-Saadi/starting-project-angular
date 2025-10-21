@@ -1,0 +1,27 @@
+<!-- Reactive Login Form Example -->
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1>Login Form using Angular Reactive Forms</h1>
+
+  <div class="control-row">
+    <!-- Email Field -->
+    <div class="control no-margin">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      @if(form.get('email')?.invalid && form.get('email')?.touched) {
+      <p class="control-error">Invalid email format.</p>
+      }
+    </div>
+
+    <!-- Password Field -->
+    <div class="control no-margin">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+      @if(form.get('password')?.invalid && form.get('password')?.touched) {
+      <p class="control-error">Invalid password format. Must be at least 6 characters long.</p>
+      }
+    </div>
+  </div>
+
+  <button class="button" type="submit">Login</button>
+</form>

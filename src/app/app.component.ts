@@ -6,6 +6,7 @@ import { DummyComponent } from './dummy/dummy.component';
 import { RectMainComponent } from './rectApp/rect-main.component';
 import { CustomComponent } from './custom-directives/custom.component';
 import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import { AuthMainComponent } from './forms/auth-main.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
     RectMainComponent,
     CustomComponent,
     CustomPipeComponent,
+    AuthMainComponent,
   ],
   template: `
     <div class="switcher">
@@ -25,6 +27,8 @@ import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
       <button (click)="activeApp = 'calculator'">
         Investment Calculator App
       </button>
+      <button (click)="activeApp = 'forms'">Forms Demo App</button>
+
       <button (click)="activeApp = 'dummy'">Dummy Demo App</button>
       <button (click)="activeApp = 'rect'">Custom 2Way binding</button>
       <button (click)="activeApp = 'customDirective'">
@@ -36,17 +40,19 @@ import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
     </div>
 
     @if (activeApp === 'tasks') {
-      <app-main-tasks></app-main-tasks>
+    <app-main-tasks></app-main-tasks>
     } @else if (activeApp === 'calculator') {
-      <app-calculator></app-calculator>
+    <app-calculator></app-calculator>
     } @else if (activeApp === 'lifecycle') {
-      <app-lifecycle-main></app-lifecycle-main>
+    <app-lifecycle-main></app-lifecycle-main>
     } @else if (activeApp === 'dummy') {
-      <app-dummy></app-dummy>
+    <app-dummy></app-dummy>
     } @else if (activeApp === 'rect') {
-      <app-rect-main></app-rect-main>
+    <app-rect-main></app-rect-main>
+    } @else if (activeApp === 'forms') {
+    <app-auth-main></app-auth-main>
     } @else if (activeApp === 'customDirective') {
-      <app-custom-directive></app-custom-directive>
+    <app-custom-directive></app-custom-directive>
     }
     <!-- @else if (activeApp === 'customPipe') {
       <app-custom-pipe></app-custom-pipe>
@@ -55,7 +61,6 @@ import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  // useing a string to track which app to show
   activeApp:
     | 'tasks'
     | 'calculator'
@@ -63,5 +68,6 @@ export class AppComponent {
     | 'dummy'
     | 'rect'
     | 'customPipe'
-    | 'customDirective' = 'tasks';
+    | 'customDirective'
+    | 'forms' = 'tasks';
 }
